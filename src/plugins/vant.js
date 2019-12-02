@@ -1,5 +1,23 @@
 import Vue from 'vue'
-import { Button, Swipe, SwipeItem, Row, Col, NavBar, Grid, GridItem, Tabbar, TabbarItem, Image, Icon, Popup, SubmitBar, Search } from 'vant'
+import {
+  Button,
+  Swipe,
+  SwipeItem,
+  Row,
+  Col,
+  NavBar,
+  Grid,
+  GridItem,
+  Tabbar,
+  TabbarItem,
+  Image,
+  Icon,
+  Popup,
+  SubmitBar,
+  Search,
+  List,
+  Card
+} from 'vant'
 
 Vue.use(Button)
 Vue.use(Swipe)
@@ -16,3 +34,5 @@ Vue.use(Icon)
 Vue.use(Popup)
 Vue.use(SubmitBar)
 Vue.use(Search)
+Vue.use(List)
+Vue.use(Card)

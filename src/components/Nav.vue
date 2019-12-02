@@ -1,13 +1,27 @@
 <template>
-  <!-- 标签栏 -->
-  <van-tabbar v-model="active" @change="changeTabbar" :route="true">
-    <van-tabbar-item icon="wap-home" to="/home">首页</van-tabbar-item>
-    <van-tabbar-item icon="manager" to="/user">会员</van-tabbar-item>
-    <van-tabbar-item icon="shopping-cart" to="/shopcart"
-      >购物车</van-tabbar-item
+  <div id="nav-box">
+    <!-- 标签栏 -->
+    <van-tabbar
+      v-model="active"
+      @change="changeTabbar"
+      :route="true"
+      active-color="#07c160"
+      inactive-color="#333"
     >
-    <van-tabbar-item icon="eye" to="/search">搜索</van-tabbar-item>
-  </van-tabbar>
+      <van-tabbar-item icon="home-o" to="/home" name="home"
+        >首页</van-tabbar-item
+      >
+      <van-tabbar-item icon="manager" to="/user" name="user"
+        >会员</van-tabbar-item
+      >
+      <van-tabbar-item icon="shopping-cart" to="/shopcart" name="shopcart"
+        >购物车</van-tabbar-item
+      >
+      <van-tabbar-item icon="eye" to="/search" name="search"
+        >搜索</van-tabbar-item
+      >
+    </van-tabbar>
+  </div>
 </template>
 
 <script>
@@ -19,7 +33,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['tabsActive'])
+    ...mapState(['tabsActiveName'])
   },
   methods: {
     changeTabbar(e) {
@@ -28,3 +42,11 @@ export default {
   }
 }
 </script>
+
+<style lang="less" scope>
+#nav-box {
+  height: 10%;
+  background-color: #fff;
+  margin-top: 10%;
+}
+</style>

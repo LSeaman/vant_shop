@@ -27,12 +27,13 @@
       <!-- 首页宫格 -->
       <van-grid :column-num="3" square :border="false">
         <van-grid-item
+          id="grid-item"
           v-for="(item, index) in navimgList"
           :key="item.id"
           icon="photo-o"
-          to="news"
+          :to="item.router"
         >
-          <van-image width="60" height="60" :src="navimgList[index].url" />
+          <van-image :src="navimgList[index].url" />
           <p style="margin: 8px">{{ item.text }}</p>
         </van-grid-item>
       </van-grid>
@@ -49,32 +50,38 @@ export default {
         {
           id: 1,
           url: './img/menu1.png',
-          text: '新闻资讯'
+          text: '新闻资讯',
+          router: 'news'
         },
         {
           id: 2,
           url: './img/menu2.png',
-          text: '图片分享'
+          text: '图片分享',
+          router: ''
         },
         {
           id: 3,
           url: './img/menu3.png',
-          text: '商品购买'
+          text: '商品购买',
+          router: ''
         },
         {
           id: 4,
           url: './img/menu4.png',
-          text: '留言反馈'
+          text: '留言反馈',
+          router: ''
         },
         {
           id: 5,
           url: './img/menu5.png',
-          text: '视频专区'
+          text: '视频专区',
+          router: ''
         },
         {
           id: 6,
           url: './img/menu6.png',
-          text: '联系我们'
+          text: '联系我们',
+          router: ''
         }
       ],
       active: 0,
@@ -91,9 +98,9 @@ export default {
       console.log(this.$http)
       const { data: res } = await this.$http.get('/api/getlunbo')
       this.swipeList = res.message
-      console.log(res.message)
     }
-    // 展示弹出层
+    // 当点击 宫格 将 编程式导航 到指定路由
+    // 将 原有的 将 路由地址 传给 后台
   }
 }
 </script>
@@ -110,10 +117,14 @@ export default {
   height: 200px;
   width: 100%;
 }
-#nav-box-home {
-  .van-nav-bar__title {
-    color: #000;
+#grid-item {
+  .van-grid-item__content {
+    padding: 0;
   }
+}
+.van-image {
+  width: 50%;
+  height: 50%;
 }
 .van-popup {
   display: flex;

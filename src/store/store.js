@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    tabsActive: 0
+    tabsActiveName: 'home',
+    detailId: 0
   },
   mutations: {
-    StrChangeTabbar(state, index) {
-      state.tabsActive = index
+    StrChangeTabbar(state, name) {
+      state.tabsActiveName = name
+    },
+    StrGetDetailID(state, id) {
+      state.detailId = id
     }
   },
   actions: {
