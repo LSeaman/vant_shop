@@ -16,7 +16,12 @@ import {
   SubmitBar,
   Search,
   List,
-  Card
+  Cell,
+  Card,
+  Tab,
+  Tabs,
+  ImagePreview,
+  Divider
 } from 'vant'
 
 Vue.use(Button)
@@ -36,3 +41,10 @@ Vue.use(SubmitBar)
 Vue.use(Search)
 Vue.use(List)
 Vue.use(Card)
+Vue.use(Cell)
+Vue.use(Tab)
+Vue.use(Tabs)
+Vue.use(Divider)
+
+// 图片预览
+Vue.prototype.$imagePreview = ImagePreview

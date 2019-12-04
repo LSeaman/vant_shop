@@ -1,5 +1,5 @@
 <template>
-  <div id="nav-box">
+  <header id="header-box">
     <van-nav-bar
       left-text="返回"
       right-text="登录"
@@ -8,7 +8,7 @@
       @click-right="onClickRight()"
       fixed
     />
-  </div>
+  </header>
 </template>
 
 <script>
@@ -24,8 +24,8 @@ export default {
 }
 </script>
 
-<style lang="less">
-#nav-box {
-  margin: 12%;
+<style lang="less" scoped>
+#header-box {
+  height: 46px;
 }
 </style>

@@ -57,7 +57,7 @@ export default {
           id: 2,
           url: './img/menu2.png',
           text: '图片分享',
-          router: ''
+          router: 'image'
         },
         {
           id: 3,
@@ -95,7 +95,6 @@ export default {
   methods: {
     // 获取 轮播图 数据
     async getSwipeList() {
-      console.log(this.$http)
       const { data: res } = await this.$http.get('/api/getlunbo')
       this.swipeList = res.message
     }

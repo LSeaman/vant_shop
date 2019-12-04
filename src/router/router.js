@@ -7,6 +7,8 @@ import Search from '../views/Search.vue'
 import News from '../components/home/News.vue'
 import Homepage from '../components/home/Homepage.vue'
 import NewsDetail from '../components/home/NewsDetail.vue'
+import Image from '../components/home/ImagePage.vue'
+import ImageDetail from '../components/home/ImageDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -19,7 +21,9 @@ const routes = [
     children: [
       { path: '/homepage', component: Homepage },
       { path: '/news', component: News },
-      { path: '/newsdetail', component: NewsDetail }
+      { path: '/newsdetail', component: NewsDetail },
+      { path: '/image', component: Image },
+      { path: '/imagedetail', component: ImageDetail }
     ]
   },
   { path: '/user', component: User },
@@ -29,6 +33,10 @@ const routes = [
 
 const router = new VueRouter({
   routes
+})
+
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0)
 })
 
 export default router

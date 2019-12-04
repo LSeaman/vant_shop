@@ -15,7 +15,7 @@ axios.defaults.baseURL = 'http://www.liulongbin.top:3005/'
 Vue.config.productionTip = false
 
 Vue.filter('dateFormat', value => {
-  return format(parseJSON(value), 'yyyy-MM-dd HH:mm:ss')
+  return format(parseJSON(value), 'yyyy-MM-dd')
 })
 
 //  指定日期到此时此刻 间隔的时间
