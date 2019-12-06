@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height: 100%">
     <router-view></router-view>
     <!-- 导航栏组件(自定义) -->
     <Nav />

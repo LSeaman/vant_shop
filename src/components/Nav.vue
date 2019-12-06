@@ -15,7 +15,11 @@
         <van-tabbar-item icon="manager" to="/user" name="user"
           >会员</van-tabbar-item
         >
-        <van-tabbar-item icon="shopping-cart" to="/shopcart" name="shopcart"
+        <van-tabbar-item
+          icon="shopping-cart"
+          to="/shopcart"
+          name="shopcart"
+          :info="StrCartData === null ? 0 : StrCartData.length"
           >购物车</van-tabbar-item
         >
         <van-tabbar-item icon="eye" to="/search" name="search"
@@ -39,7 +43,7 @@ export default {
     this.routerPath = this.$store.state.path
   },
   computed: {
-    ...mapState(['tabsActiveName', 'path'])
+    ...mapState(['tabsActiveName', 'path', 'StrCartData'])
   },
   methods: {
     changeTabbar(e) {
@@ -53,6 +57,5 @@ export default {
 #nav-box {
   height: 50px;
   background-color: #fff;
-  margin-top: 10%;
 }
 </style>

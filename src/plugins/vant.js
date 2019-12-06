@@ -17,11 +17,16 @@ import {
   Search,
   List,
   Cell,
+  CellGroup,
   Card,
   Tab,
   Tabs,
   ImagePreview,
-  Divider
+  Divider,
+  Stepper,
+  SwipeCell,
+  Toast,
+  Field
 } from 'vant'
 
 Vue.use(Button)
@@ -42,9 +47,14 @@ Vue.use(Search)
 Vue.use(List)
 Vue.use(Card)
 Vue.use(Cell)
+Vue.use(CellGroup)
 Vue.use(Tab)
 Vue.use(Tabs)
 Vue.use(Divider)
+Vue.use(Stepper)
+Vue.use(SwipeCell)
+Vue.use(Toast)
+Vue.use(Field)
 
 // 图片预览
 Vue.prototype.$imagePreview = ImagePreview

@@ -9,6 +9,9 @@ import Homepage from '../components/home/Homepage.vue'
 import NewsDetail from '../components/home/NewsDetail.vue'
 import Image from '../components/home/ImagePage.vue'
 import ImageDetail from '../components/home/ImageDetail.vue'
+import Mall from '../components/home/Mall.vue'
+import MallDetail from '../components/home/MallDetail.vue'
+import GoodsArticle from '../components/home/GoodsArticle.vue'
 
 Vue.use(VueRouter)
 
@@ -23,7 +26,15 @@ const routes = [
       { path: '/news', component: News },
       { path: '/newsdetail', component: NewsDetail },
       { path: '/image', component: Image },
-      { path: '/imagedetail', component: ImageDetail }
+      { path: '/imagedetail', component: ImageDetail },
+      { path: '/mall', component: Mall },
+      {
+        path: '/malldetail',
+        component: MallDetail,
+        children: [
+          { path: '/goodsarticle', component: GoodsArticle }
+        ]
+      }
     ]
   },
   { path: '/user', component: User },

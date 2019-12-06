@@ -24,11 +24,13 @@
       </van-grid>
       <div id="content" v-html="imgDetailInfo.content"></div>
     </div>
+    <Comments />
   </div>
 </template>
 
 <script>
 import ReBack from '../ReBack'
+import Comments from '../Comments'
 export default {
   data() {
     return {
@@ -60,7 +62,8 @@ export default {
     }
   },
   components: {
-    ReBack
+    ReBack,
+    Comments
   }
 }
 </script>

@@ -1,43 +1,37 @@
 <template>
   <div>
-    <div>
-      <!-- 弹出层 -->
-      <van-popup
-        v-model="show"
-        position="left"
-        style="height: 100%; width: 96px"
+    <!-- 弹出层 -->
+    <van-popup v-model="show" position="left" style="height: 100%; width: 96px">
+      <van-image
+        round
+        width="64px"
+        height="64px"
+        src="https://img.yzcdn.cn/vant/cat.jpeg"
+      />
+    </van-popup>
+    <!-- 导航栏 -->
+    <van-nav-bar id="nav-box-home" title="黑马程序员">
+      <van-icon name="bars" slot="left" @click="show = true" />
+    </van-nav-bar>
+    <!-- 轮播图 -->
+    <van-swipe :autoplay="3000" indicator-color="white" style="height: 200px">
+      <van-swipe-item v-for="item in swipeList" :key="item.id">
+        <img :src="item.img" alt="" class="swipe-img-box" />
+      </van-swipe-item>
+    </van-swipe>
+    <!-- 首页宫格 -->
+    <van-grid :column-num="3" square :border="false">
+      <van-grid-item
+        id="grid-item"
+        v-for="(item, index) in navimgList"
+        :key="item.id"
+        icon="photo-o"
+        :to="item.router"
       >
-        <van-image
-          round
-          width="64px"
-          height="64px"
-          src="https://img.yzcdn.cn/vant/cat.jpeg"
-        />
-      </van-popup>
-      <!-- 导航栏 -->
-      <van-nav-bar id="nav-box-home" title="黑马程序员">
-        <van-icon name="bars" slot="left" @click="show = true" />
-      </van-nav-bar>
-      <!-- 轮播图 -->
-      <van-swipe :autoplay="3000" indicator-color="white" style="height: 200px">
-        <van-swipe-item v-for="item in swipeList" :key="item.id">
-          <img :src="item.img" alt="" class="swipe-img-box" />
-        </van-swipe-item>
-      </van-swipe>
-      <!-- 首页宫格 -->
-      <van-grid :column-num="3" square :border="false">
-        <van-grid-item
-          id="grid-item"
-          v-for="(item, index) in navimgList"
-          :key="item.id"
-          icon="photo-o"
-          :to="item.router"
-        >
-          <van-image :src="navimgList[index].url" />
-          <p style="margin: 8px">{{ item.text }}</p>
-        </van-grid-item>
-      </van-grid>
-    </div>
+        <van-image :src="navimgList[index].url" />
+        <p style="margin: 8px">{{ item.text }}</p>
+      </van-grid-item>
+    </van-grid>
   </div>
 </template>
 
@@ -63,7 +57,7 @@ export default {
           id: 3,
           url: './img/menu3.png',
           text: '商品购买',
-          router: ''
+          router: 'mall'
         },
         {
           id: 4,
